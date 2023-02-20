@@ -1,0 +1,79 @@
+body {
+  font: 28px "Trebuchet MS", Futura, sans-serif;
+  background-color: #F9F6EE;
+  margin: auto;
+  padding: 25px 50px 25px 100px;
+  text-align: justify;
+  font-size: 110%;
+}
+h1,h2{
+	text-align: center;
+}
+p{
+	max-width: 85%;
+}
+div.quiz {
+  border: 1px dashed black;
+  width: 75%;
+  padding: 50px;
+  margin: auto;
+  background-color: #efe5d5;
+}
+div.error {
+	color: red;
+	font-size: 12px
+}
+
+a:link{
+  text-decoration: none;
+  font-style: italic;
+  color: blue;
+  font-weight: bold;
+}
+a:visited{
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+a:hover{
+  text-decoration: none;
+  color: #72c1e8;
+}
+a:active{
+  text-decoration: none;
+}
+a.quiz:link{
+  text-decoration: none;
+  font-style: italic;
+  color: black;
+  font-weight: bold;
+}
+a.quiz:visited{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+a.quiz:hover{
+  text-decoration: none;
+  color: gray;
+}
+a.quiz:active{
+  text-decoration: none;
+}
+table{
+  border-collapse: collapse;
+  background-color: #F9F6EE;
+  border: 1px solid; 
+  width: 100%;
+}
+th{
+  border: 1px solid;
+  height: 75px;
+}
+td {
+  border: 1px solid;
+  padding-left: 10px;
+  height: 50px;
+  padding-right: 10px;
+}
+tr:nth-child(even) {background-color: #D3D3D3;}
