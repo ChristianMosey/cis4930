@@ -1,10 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="statistics.js"></script>
+    <script>
+        function parseInput() {
+            let rawNum = document.getElementById("numRaw").value;
+            const re = new RegExp("\\D+");
+            const userNum = rawNum.split(re).filter(i => i).map(Number);
+            console.log(userNum);
+            printArray(userNum);
+            if (userNum.length > 0) {
+                statsHelper(userNum);
+            }
+        }
+        function printArray(userNum){
+            let out = document.getElementById("arrayOut");
+            out.innerHTML = "Your array: ";
+            if (userNum.length === 0){
+                out.innerHTML += "Your array is empty!";
+            }
+            else{
+                out.innerHTML += userNum[0];
+                for (let i = 1; i < userNum.length; i++){
+                    out.innerHTML += ", " + userNum[i];
+                }
+            }
+            out.innerHTML += "<br>";
+        }
+        function statsHelper(userNum){
+            let out = document.getElementById("arrayOut");
+            out.innerHTML += `<br>
+       <table>
+        <tr>
+            <td>Number of Elements:</td>
+            <td>${findN(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Summation:</td>
+            <td>${findSum(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Mean:</td>
+            <td>${findMean(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Median:</td>
+            <td>${findMedian(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Mode:</td>
+            <td>${findMode(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Maximum Value:</td>
+            <td>${findMax(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Minimum Value:</td>
+            <td>${findMin(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Range:</td>
+            <td>${findRange(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Variance:</td>
+            <td>${findVariance(userNum).toFixed(2)}</td>
+        </tr>
+        <tr>
+            <td>Standard Deviation:</td>
+            <td>${findStandardDeviation(userNum).toFixed(2)}</td>
+        </tr>
+       </table>
+            `
+        }
+    </script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../index.css">
+    <title>Statistics</title>
 </head>
 <body>
+    <h1>Statistics</h1>
+    <p>Insert a list of values in a sample and get various statistical characteristics of the set. Takes any non-digit delimiters. All values must be integers.</p>
+    <form>
+        <p>Input list of numbers here.</p>
+        <textarea id="numRaw" name="numRaw" cols="50" rows="5"></textarea>
+        <br><br>
+        <button type="button" onclick="parseInput()">Submit</button>
+    </form>
+    <hr>
+    <div id="arrayOut"></div>
 
+    <a href="./unitTests.html">Unit tests</a><br>
+    <a href="../index.html">Home</a>
 </body>
 </html>
