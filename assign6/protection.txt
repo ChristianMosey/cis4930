@@ -1,0 +1,9 @@
+SQL injection is when the end user of a website uses inputs in an unintended way to run scripts on the database.
+This can allow them to view all the data on the table and even drop tables.
+The way I addressed this is to prepare and then bind parameters to the user input before it is executed in the sql command.
+In mysqli this is handles by the methods prepare, bind param, and execute. First you prepare a statement using "?" to
+stand in for any variables names. Then using the bind params function you declare the type of each variable in a string,
+such as "ssissis" which was used in this assignment. This string means the variables in order are of type string, string,
+integer, string, string, integer, and string. You then list the variables to coincide with those types. Finally,
+you use execute to safely execute the statement. So, even if someone tried to insert "DROP TABLE" it would just be
+processed as a string and be harmless.

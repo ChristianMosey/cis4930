@@ -9,6 +9,10 @@ body {
 h1,h2{
 	text-align: center;
 }
+.collapse.in {
+  visibility: visible;
+  display: block;
+}
 p{
 	max-width: 85%;
 }
